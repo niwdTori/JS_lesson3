@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     Задание 1
+      //   Создайте функцию которая возводит переданное число в куб, необходимо вывести в консоль результат 2^3 степени + 3 ^ 3 степени
+      const cubingNumber = (num) => num ** 3;
+      let number = Number(prompt("Введите число"));
+      console.log(`Куб числа ${number} равен ${cubingNumber(number)}`);
+      //вариант 1
+      console.log(
+        `2^3 степени = ${cubingNumber(2)}, 3^3 степени = ${cubingNumber(3)}`
+      );
+      //вариант 2
+      console.log(`2^3 + 3^3 степени = ${cubingNumber(2) + cubingNumber(3)}`);
+
+      //   Задание 2
+      //   Пользователь вводит с клавиатуры число, если ввёл текст, необходимо вывести что значение задано неверно. Создать фукнцию, которая высчитывает 13% от данного числа и выводит в консоль текст "Размер заработной платы за вычетом налогов равен значение"
+      let numberUser = Number(prompt("Введите число"));
+      if (isNaN(numberUser)) {
+        alert("Значение задано неверно");
+      }
+      const taxDeduction = (salary) =>
+        console.log(
+          `Размер заработной платы за вычетом налогов равен ${salary * 0.87}`
+        );
+      taxDeduction(numberUser);
+
+      //   Задание 3
+      //   Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
+      function maxNumber(a, b, c) {
+        let maxNum = "";
+        if (a < b) {
+          if (b > c) {
+            return (maxNum = b);
+          } else {
+            return (maxNum = c);
+          }
+        } else if (a < c) {
+          return (maxNum = c);
+        } else {
+          return (maxNum = a);
+        }
+      }
+      let number1 = Number(prompt("Введите первое число"));
+      let number2 = Number(prompt("Введите второе число"));
+      let number3 = Number(prompt("Введите третье число"));
+      console.log(`Наибольшее число - ${maxNumber(number1, number2, number3)}`);
+
+      //   Задание 4
+      //   Необходимо реализовать четыре функции, каждая функция должна принимать по два числа и выполнять одну из операций:Сложение, Разность, Умножение, Деление
+      const sum = (a, b) => a + b;
+      const difference = (a, b) => (a > b ? a - b : b - a);
+      const multiplication = (a, b) => a * b;
+      const division = (a, b) => a / b;
+      let numberOne = Number(prompt("Введите первое число"));
+      let numberTwo = Number(prompt("Введите второе число"));
+      console.log(`Сложение - ${sum(numberOne, numberTwo)}`);
+      console.log(`Разность - ${difference(numberOne, numberTwo)}`);
+      console.log(`Умножение - ${multiplication(numberOne, numberTwo)}`);
+      console.log(`Деление - ${division(numberOne, numberTwo)}`);
+    </script>
+  </body>
+</html>
